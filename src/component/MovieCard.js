@@ -1,13 +1,25 @@
-import React from 'react'
+import React from 'react';
+import { addFavourites, removeFromFavourites } from '../actions';
 
 class  MovieCard  extends React.Component{
+
+    handleFavouriteClick = ()=>{
+        const { movie }=this.props;
+
+        this.props.dispatch(addFavourites(movie))
+    }
+    handleUnfavouriteClick=()=>{ 
+        const { movie } = this.props;
+        this.props.dispatch(removeFromFavourites(movie));
+    }
    render(){
-       const { movie }= this.props;
+       const { movie ,isMovieFavourite}= this.props;
     return (
         <div className="movie-card">
             <div className="left">
-
                 <img alt="movie-poster"  src={movie.Poster}/>
+
+                
             </div>
             <div className="right">
 
@@ -17,13 +29,16 @@ class  MovieCard  extends React.Component{
                <div className="plot">
                    {movie.Plot}
                </div>
-               <div>
+               <div className="footer">
                    <div className="rating">
-                       {movie.imdbRating}
+                        {movie.imdbRating}
                    </div>
-                   <button className="favourite-btn">
-                       Favourite
-                   </button>
+                   {
+                       isMovieFavourite
+                       ? <button className="unfavourite-btn" onClick={this.handleUnfavouriteClick}>Unfavourite</button>
+                       :<button className="favourite-btn" onClick={this.handleFavouriteClick}>Favourite</button>
+                   }
+                  
                </div>
 
             </div>
