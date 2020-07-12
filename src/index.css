@@ -173,6 +173,8 @@ body {
 .movie-card .title {
   padding-top: 10px ;
   font-size: 3rem;
+  color: #1966a0;
+  
   font-weight: 600;
 }
 .movie-card .plot {
