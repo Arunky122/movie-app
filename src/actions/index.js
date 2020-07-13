@@ -38,3 +38,20 @@ export function setShowFavourites(val){
          val
      }
  }
+
+export function handleMovieSearch(movie){
+    const url = `http://www.omdbapi.com/?i=tt3896198&apikey=c4b6568e&t=${movie}`;
+
+    return function(dispatch){
+        fetch(url)
+        .then(response=>response.json())
+        .then(movie=>{
+            console.log("movie",movie);
+            //dispatch an action
+            // dispatch({ type: 'ADD_SEARCH_RESULT',movie})
+        });
+    }
+    
+ }
+
+ 

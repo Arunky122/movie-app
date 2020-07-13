@@ -9,6 +9,7 @@ import {addMovies,setShowFavourites} from '../actions';
 class App extends React.Component { 
   componentDidMount(){
     const { store }=this.props;
+    // console.log({props:this.props});
 
     store.subscribe(()=>{
       console.log("updated");
@@ -49,7 +50,7 @@ class App extends React.Component {
     return (
       <div className="App">
   
-        <Navbar/>
+  <Navbar dispatch={this.props.store.dispatch}/>
         <div className="main">
   
           <div className="tabs">
