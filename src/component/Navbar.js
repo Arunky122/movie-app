@@ -9,6 +9,7 @@ class Navbar extends React.Component{
         this.state = {
             
             searchText: ''
+            // add commit
         };
 
         // console.log({props:this.props})
