@@ -18,7 +18,7 @@ body {
 }
 .search-container input {
   height: 43px;
-  width: 85%;
+  width: 99%;
   border-bottom-left-radius: 4px;
   border-top-left-radius: 4px;
   border: none;
@@ -32,7 +32,8 @@ body {
   position:relative;
   width: 40%;
   /* border: 1px solid white; */
-  padding: 5px;
+  /* padding: 5px; */
+
 }
 .search-results {
   position: absolute;
@@ -40,7 +41,7 @@ body {
   width: 100%;
   box-sizing: border-box;
   border: 1px solid #e1e1e1;
-  top: 42px;
+  top: 44px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   z-index: 100;
